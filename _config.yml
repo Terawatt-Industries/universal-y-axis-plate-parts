@@ -21,8 +21,8 @@ githubiverse:
 
     ## The names of directories where any images, source and stl files associated with the project can be found.
     img_dir: img
-    stl_dir: lm8uu-holder/dist,tensioner/dist
-    src_dir: lm8uu-holder/src,tensioner/src
+    stl_dir: dist
+    src_dir: src
 
     ## The headline image
     lead_image: test-jig.png
