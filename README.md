@@ -1,11 +1,11 @@
-#Universal Y-Axis Plate
+##Universal Y-Axis Plate
 The Universal Y-Axis Plate is an aluminum y-axis plate for RepRap printers, with matching open-source 3D-printed parts to mount it.
 
 The universal plate is designed to eliminate the y-axis plate, and combines both y-axis and heatbed plate holes in one design.  The plate is designed and fulfilled by Terawatt Industries.
 
 This repository contains the matching printed (plastic) parts for the universal plate.  All design files are SCAD with some basic paramterization for height.  There are mounts for LM8UU bearings and tensioners with extra height to keep the belt aligned.
 
-#Bill of Materials
+##Bill of Materials
 Terawatt fulfills this BOM with 18-8 stainless hardware, but any steel alloy is OK.
 
 1. 1x Universal Y-Axis Plate
@@ -17,7 +17,7 @@ Terawatt fulfills this BOM with 18-8 stainless hardware, but any steel alloy is 
 7. 4x printed LM8UU mounts (PLA recommended w/high infill ratio)
 8. 4x LM8UU bearings
 
-#Assembly Instructions
+##Assembly Instructions
 1. Print up the parts required in PLA, or obtain them.
 2. Attach a spacer to the plate with 2x M3x45mm screws.  It may be a tight fit that requires a hex wrench to thread completely.  Then attach the LM8UU mounts on top.
 3. Place nuts in the traps and tighten each screw evenly.
