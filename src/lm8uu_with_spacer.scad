@@ -1,3 +1,6 @@
+/*
+Universal Y-Axis Plate Matching Parts by Longevity Software LLC d.b.a. Terawatt Industries is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.  NOTE:  this license only applies to the matching parts repository (for the Universal Y-Axis Plate fulfilled by Terawatt Industries).  The Universal Y-Axis Plate source files are licensed separately.
+*/
 use <lm8uu-holder-slim_v1-1.scad>
 
 //screw/nut dimensions (M3) - hexagon socket head cap screw ISO 4762, hexagon nut ISO 4032
