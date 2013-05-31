@@ -25,14 +25,14 @@ screw_head_dia = screw_head_dia_iso + clearance_dia;
 nut_wrench_size = nut_wrench_size_iso + clearance_dia;
 nut_dia_perimeter = (nut_wrench_size/cos(30));
 nut_dia = nut_dia_perimeter;
-nut_surround_thickness = 2;
+nut_surround_thickness = 3;
 
 // main body dimensions
 body_wall_thickness = 3.5;
 body_width = LM8UU_dia + (2*body_wall_thickness);
 body_height = body_width;
 body_length = LM8UU_length;
-gap_width = rod_dia + 2;
+gap_width = rod_dia + 4;
 screw_bushing_space = 1;
 screw_elevation = LM8UU_dia + body_wall_thickness + (screw_thread_dia/2) +screw_bushing_space;
 

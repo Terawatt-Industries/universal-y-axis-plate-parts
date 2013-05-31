@@ -1,16 +1,15 @@
 use <lm8uu-holder-slim_v1-1.scad>
 
 //screw/nut dimensions (M3) - hexagon socket head cap screw ISO 4762, hexagon nut ISO 4032
-screw_thread_dia_iso = 3.0;
-screw_head_dia_iso = 6.35;
-nut_wrench_size_iso = 6.35;
+screw_thread_dia_iso = 3 + 0.65;
+screw_head_dia_iso = 6.35 + 0.55;
+nut_wrench_size_iso = 6.35 + 0.55;
 nut_height = 4.5;
 
 // screw/nut dimensions for use (plus clearance for fitting purpose)
-clearance_dia = 0.55;
-screw_thread_dia = screw_thread_dia_iso + clearance_dia;
-screw_head_dia = screw_head_dia_iso + clearance_dia;
-nut_wrench_size = nut_wrench_size_iso + clearance_dia;
+screw_thread_dia = screw_thread_dia_iso;
+screw_head_dia = screw_head_dia_iso;
+nut_wrench_size = nut_wrench_size_iso;
 
 lm8uu_with_spacer(33);
 
@@ -38,6 +37,7 @@ module mount_plate(h, nutz)
 module spacer(spacer_height) {
   difference() {
     translate([0, 30.5, spacer_height / 2]) mount_plate(spacer_height, false);
+	// save some material?
     translate([0, 30.5, spacer_height / 2]) cube([11, 11, spacer_height / 2], center=true);
   }
 }

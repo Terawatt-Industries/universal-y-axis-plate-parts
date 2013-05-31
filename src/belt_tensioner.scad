@@ -1,9 +1,6 @@
 // Gregs configuration file
 include <configuration.scad>
 
-// jonaskuehling's slim LM8UU Holder
-include <lm8uu-holder-slim.scad>
-
 belt_width=6;
 belt_thickness=1.5; 
 tooth_height=1.5;
@@ -18,8 +15,8 @@ belt_clamp_hole_separation=18;
 belt_clamp_height=m3_diameter+2*belt_clamp_thickness;
 belt_clamp_length=belt_clamp_hole_separation+m3_diameter+2*belt_clamp_thickness;
 
-belt_clamp_channel_height=belt_thickness+tooth_height+belt_clamp_thickness*2;
-belt_clamp_clamp_height=tooth_height+belt_clamp_thickness*2;
+belt_clamp_channel_height=belt_thickness+tooth_height+belt_clamp_thickness*1.4;
+belt_clamp_clamp_height=tooth_height+belt_clamp_thickness*1.75;
 
 for (i=[-1])
 translate([0,i*(belt_clamp_width+1),0])
