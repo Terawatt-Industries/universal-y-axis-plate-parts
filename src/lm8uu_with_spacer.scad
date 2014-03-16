@@ -37,7 +37,7 @@ module mount_plate(h, nutz)
 	}
 }
 
-module spacer(spacer_height) {
+module bushing_spacer(spacer_height) {
   difference() {
     translate([0, 30.5, spacer_height / 2]) mount_plate(spacer_height, false);
 	// save some material?
@@ -45,28 +45,36 @@ module spacer(spacer_height) {
   }
 }
 
-module lm8uu_with_spacer(spacer_height) {
-  translate([0, 0, 5 / 2]) mount_plate(5, false);
-  // hack - fill in lm8uu holder mount holes then punch again
-difference() {
-union() {
-  translate([0, 0, 5]) lm8uu_holder(1);		// without mountplate
-		for(i=[-1,1]) {
+module wrap_lm8uu_holder(spacer_height) {
+	// hack - fill in lm8uu holder mount holes then punch again
+	difference() {
+		union() {
+			translate([0, 0, 5]) lm8uu_holder(1);		// without mountplate
+			for(i=[-1,1]) {
 				translate([i * (15.5), 0, 5])
-					rotate([0, 0, 90])
-						cylinder(r=nut_wrench_size / 2, h = 3, $fn=20);
+				rotate([0, 0, 90])
+					cylinder(r=nut_wrench_size / 2, h = 3, $fn=20);
+			}
 		}
-}
-		for(i=[-1,1]) {
-				translate([i * (15.5), 0, 5])
-				cylinder(r=screw_thread_dia / 2, h=25, center = true, $fn=20);
-		}
+		spacer_screw_holes(25);
 		for(i=[-1,1]) {
 			// nut trap
 			translate([i * (15.5), 0, nut_height + 0.01])
-				rotate([0, 0, 90])
-					cylinder(r=nut_wrench_size / 2, h = nut_height, $fn=6);
+			rotate([0, 0, 90])
+				cylinder(r=nut_wrench_size / 2, h = nut_height, $fn=6);
+		}
+	}
+}
+
+module spacer_screw_holes(height) {
+		for(i=[-1,1]) {
+			translate([i * (15.5), 0, 5])
+			cylinder(r=screw_thread_dia / 2, h = height, center = true, $fn=20);
 		}
 }
-		spacer(spacer_height);
+
+module lm8uu_with_spacer(spacer_height) {
+	translate([0, 0, 5 / 2]) mount_plate(5, false);
+	wrap_lm8uu_holder(spacer_height);
+	bushing_spacer(spacer_height);
 }
